@@ -14,13 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Java 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
       - name: Add
         id: add
         uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: Add
           setup-command: ''
-          command: "./mvnw test -Dtest=AddTest"
+          command: './mvnw test -Dtest=AddTest'
           timeout: 1
           max-score: 1
 
@@ -30,7 +36,7 @@ jobs:
         with:
           test-name: Average
           setup-command: ''
-          command: "./mvnw test -Dtest=AverageTest"
+          command: './mvnw test -Dtest=AverageTest'
           timeout: 1
           max-score: 1
 
@@ -40,7 +46,7 @@ jobs:
         with:
           test-name: Divide
           setup-command: ''
-          command: "./mvnw test -Dtest=DivideTest"
+          command: './mvnw test -Dtest=DivideTest'
           timeout: 1
           max-score: 1
 
@@ -50,7 +56,7 @@ jobs:
         with:
           test-name: GCD
           setup-command: ''
-          command: "./mvnw test -Dtest=GcdTest"
+          command: './mvnw test -Dtest=GcdTest'
           timeout: 1
           max-score: 1
 
@@ -60,7 +66,7 @@ jobs:
         with:
           test-name: Heron
           setup-command: ''
-          command: "./mvnw test -Dtest=HeronTest"
+          command: './mvnw test -Dtest=HeronTest'
           timeout: 1
           max-score: 1
 
@@ -70,7 +76,7 @@ jobs:
         with:
           test-name: MaxOfThree
           setup-command: ''
-          command: "./mvnw test -Dtest=MaxOfThreeTest"
+          command: './mvnw test -Dtest=MaxOfThreeTest'
           timeout: 1
           max-score: 1
 
@@ -80,7 +86,7 @@ jobs:
         with:
           test-name: Multiply
           setup-command: ''
-          command: "./mvnw test -Dtest=MultiplyTest"
+          command: './mvnw test -Dtest=MultiplyTest'
           timeout: 1
           max-score: 1
 
@@ -90,7 +96,7 @@ jobs:
         with:
           test-name: Power
           setup-command: ''
-          command: "./mvnw test -Dtest=PowerTest"
+          command: './mvnw test -Dtest=PowerTest'
           timeout: 1
           max-score: 1
 
@@ -100,7 +106,7 @@ jobs:
         with:
           test-name: Remainder
           setup-command: ''
-          command: "./mvnw test -Dtest=RemainderTest"
+          command: './mvnw test -Dtest=RemainderTest'
           timeout: 1
           max-score: 1
 
@@ -110,22 +116,22 @@ jobs:
         with:
           test-name: Subtract
           setup-command: ''
-          command: "./mvnw test -Dtest=SubtractTest"
+          command: './mvnw test -Dtest=SubtractTest'
           timeout: 1
           max-score: 1
 
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
-          ADD_RESULTS: "${{steps.add.outputs.result}}"
-          AVERAGE_RESULTS: "${{steps.average.outputs.result}}"
-          DIVIDE_RESULTS: "${{steps.divide.outputs.result}}"
-          GCD_RESULTS: "${{steps.gcd.outputs.result}}"
-          HERON_RESULTS: "${{steps.heron.outputs.result}}"
-          MAXOFTHREE_RESULTS: "${{steps.maxofthree.outputs.result}}"
-          MULTIPLY_RESULTS: "${{steps.multiply.outputs.result}}"
-          POWER_RESULTS: "${{steps.power.outputs.result}}"
-          REMAINDER_RESULTS: "${{steps.remainder.outputs.result}}"
-          SUBTRACT_RESULTS: "${{steps.subtract.outputs.result}}"
+          ADD_RESULTS: '${{steps.add.outputs.result}}'
+          AVERAGE_RESULTS: '${{steps.average.outputs.result}}'
+          DIVIDE_RESULTS: '${{steps.divide.outputs.result}}'
+          GCD_RESULTS: '${{steps.gcd.outputs.result}}'
+          HERON_RESULTS: '${{steps.heron.outputs.result}}'
+          MAXOFTHREE_RESULTS: '${{steps.maxofthree.outputs.result}}'
+          MULTIPLY_RESULTS: '${{steps.multiply.outputs.result}}'
+          POWER_RESULTS: '${{steps.power.outputs.result}}'
+          REMAINDER_RESULTS: '${{steps.remainder.outputs.result}}'
+          SUBTRACT_RESULTS: '${{steps.subtract.outputs.result}}'
         with:
           runners: add,average,divide,gcd,heron,maxofthree,multiply,power,remainder,subtract
