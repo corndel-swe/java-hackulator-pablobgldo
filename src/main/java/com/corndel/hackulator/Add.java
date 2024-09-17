@@ -8,6 +8,6 @@ public class Add {
    */
   public static int add(int x, int y) {
     var result = x + y;
-    return 0;
+    return result;
   }
 }
