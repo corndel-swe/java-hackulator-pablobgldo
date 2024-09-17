@@ -7,6 +7,7 @@ public class Heron {
    * https://en.wikipedia.org/wiki/Heron%27s_formula
    */
   static double heron(double a, double b, double c) {
-    return Math.sqrt(0.0);
+    var s = (a+b+c)/2;
+    return Math.sqrt(s*(s-a)*(s-b)*(s-c));
   }
 }

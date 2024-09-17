@@ -21,6 +21,6 @@ public class Subtract {
       return x - y;
     }
 
-    throw new Error("Is this reachable?");
+    return 0;
   }
 }

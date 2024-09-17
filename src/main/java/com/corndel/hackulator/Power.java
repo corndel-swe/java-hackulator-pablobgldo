@@ -8,6 +8,6 @@ public class Power {
    * <p>power(2, 3) => 8
    */
   static double power(long x, long n) {
-    return x ^ n;
+    return Math.pow(x, n);
   }
 }
