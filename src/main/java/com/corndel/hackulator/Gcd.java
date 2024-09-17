@@ -11,7 +11,8 @@ public class Gcd {
   static int gcd(int a, int b) {
     while (a != 0) {
       var temp = a;
-      a = b % a;
+      a = b % temp;
+      b = temp;
     }
     return b;
   }
